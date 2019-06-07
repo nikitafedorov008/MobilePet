@@ -138,7 +138,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/places/ic_spa_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/user/Downloads/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_map_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -149,9 +149,9 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_spa" />
+                            <entry key="outputName" value="ic_map" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\fedorovs" />
+                            <entry key="sourceFile" value="$APPLICATION_HOME_DIR$/bin/C:\Users\fedorovs" />
                           </map>
                         </option>
                       </PersistentState>

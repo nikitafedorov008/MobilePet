@@ -1,6 +1,7 @@
 package ru.com.jetbrainsresearch.ido;
 
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,8 +13,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 
 /**
@@ -57,11 +60,23 @@ public class PetFragment extends Fragment {
                     IntentIntegrator integrator = new IntentIntegrator(getActivity());
                     integrator.setPrompt("Scan QR/BAR");
                     integrator.setOrientationLocked(false);
-                    integrator.initiateScan();
+                    //integrator.initiateScan();
+                    IntentIntegrator.forSupportFragment(PetFragment.this).initiateScan();
             }
         });
 
         return view;
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        String barcode = result.getContents();
+        if (barcode != null){
+            count3 += 50;
+            Toast.makeText(getActivity(), "good",   Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getActivity(), "f8ck",   Toast.LENGTH_LONG).show();
+        }
     }
 
     private void increaseCount() {
