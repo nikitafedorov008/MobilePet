@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import es.dmoral.toasty.Toasty;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,10 +74,10 @@ public class PetFragment extends Fragment {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         String barcode = result.getContents();
         if (barcode != null){
-            count3 += 50;
-            Toast.makeText(getActivity(), "good",   Toast.LENGTH_LONG).show();
+            countTv3.setText(String.valueOf(count3 += 50));
+            Toasty.success(getActivity(), "good",   Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getActivity(), "f8ck",   Toast.LENGTH_LONG).show();
+            Toasty.error(getActivity(), "you didn't feed me",   Toast.LENGTH_SHORT).show();
         }
     }
 
