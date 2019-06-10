@@ -138,7 +138,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_arrow_back_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/user/Downloads/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_notifications_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -149,9 +149,9 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_arrow_back" />
+                            <entry key="outputName" value="ic_notifications" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Program Files\Android\Android Studio\bin\C:\Users\fedorovs" />
+                            <entry key="sourceFile" value="$APPLICATION_HOME_DIR$/bin/C:\Program Files\Android\Android Studio\bin\C:\Users\fedorovs" />
                           </map>
                         </option>
                       </PersistentState>
