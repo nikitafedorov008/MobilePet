@@ -4,10 +4,39 @@
     <color name="colorPrimaryDark">#00C853</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPurple">#7E57C2</color>
+    <color name="colorBackground">#595959</color>
+    <color name="black_overlay">#282e33</color>
+    <color name="gray">#23272B</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#4cf6bd</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#219e7b</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#8df9da</color>
+
+    <!-- Placeholder colors-->
+    <color name="stay_color">#999999</color>
 
     <color name="chart_value_1">#2d4302</color>
     <color name="chart_value_2">#75a80d</color>
     <color name="chart_value_3">#8fc026</color>
     <color name="chart_value_4">#B5CC84</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen1</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen1</item>
+    </array>
 
 </resources>
