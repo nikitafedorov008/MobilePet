@@ -17,10 +17,11 @@ import ru.com.jetbrainsresearch.ido.home.HomeFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    private FloatingActionButton petFB, homeFB, statisticsFB, settingsFB;
+    private FloatingActionButton petFB, homeFB, mapFB, statisticsFB, settingsFB;
     final Fragment fragment1 = new PetFragment();
     final Fragment fragment2 = new HomeFragment();
     final Fragment fragment3 = new StatisticsFragment();
+    final Fragment fragment4 = new SettingsFragment();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
 
@@ -34,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         petFB = (FloatingActionButton) findViewById(R.id.pet_fab);
         homeFB = (FloatingActionButton) findViewById(R.id.home_fab);
+        mapFB = (FloatingActionButton) findViewById(R.id.map_fab);
         statisticsFB = (FloatingActionButton) findViewById(R.id.statistic_fab);
         settingsFB = (FloatingActionButton) findViewById(R.id.settings_fab);
+        fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
         fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container,fragment1, "1").commit();
@@ -56,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mapFB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
         statisticsFB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         settingsFB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
+                fm.beginTransaction().hide(active).show(fragment4).commit();
+                active = fragment4;
             }
         });
 
@@ -98,13 +109,23 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
 
+    private boolean loadFragment(Fragment fragment){
+        if (fragment != null){
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container,fragment).commit();
+            return true;
+
+        }
+        return false;
+
+    }
 
 }

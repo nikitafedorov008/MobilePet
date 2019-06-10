@@ -44,8 +44,11 @@
 
 
     <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:menu_colorNormal="@color/colorPrimary"
+        app:menu_colorPressed="@color/colorPrimaryDark"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:menu_icon="@drawable/ic_more_vert"
@@ -56,6 +59,8 @@
             android:id="@+id/pet_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
             android:src="@drawable/ic_pets"
             app:fab_label="@string/title_pet"
             app:fab_size="mini" />
@@ -64,6 +69,8 @@
             android:id="@+id/home_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
             android:src="@drawable/ic_home"
             app:fab_label="@string/title_home"
             app:fab_size="mini" />
@@ -72,6 +79,8 @@
             android:id="@+id/map_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
             android:src="@drawable/ic_map"
             app:fab_label="@string/title_map"
             app:fab_size="mini" />
@@ -80,6 +89,8 @@
             android:id="@+id/statistic_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
             android:src="@drawable/ic_poll"
             app:fab_label="@string/title_statistics"
             app:fab_size="mini" />
@@ -88,6 +99,8 @@
             android:id="@+id/settings_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
             android:src="@drawable/ic_settings"
             app:fab_label="@string/settings"
             app:fab_size="mini" />
