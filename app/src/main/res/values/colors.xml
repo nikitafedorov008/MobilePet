@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#00C853</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPurple">#7E57C2</color>
+
+    <color name="chart_value_1">#2d4302</color>
+    <color name="chart_value_2">#75a80d</color>
+    <color name="chart_value_3">#8fc026</color>
+    <color name="chart_value_4">#B5CC84</color>
+
 </resources>

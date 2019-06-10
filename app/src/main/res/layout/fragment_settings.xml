@@ -50,7 +50,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="76dp"
                     android:text="IDO"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@android:color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -90,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:src="@drawable/ic_map"
+                        android:src="@drawable/ic_star"
                         android:layout_marginStart="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -103,7 +103,7 @@
                         android:elevation="4dp"
                         android:padding="20dp"
                         android:textColor="@android:color/white"
-                        android:text="site: http://polka.com/" />
+                        android:text="Rate us" />
                 </LinearLayout>
 
                 <LinearLayout

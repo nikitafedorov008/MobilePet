@@ -138,7 +138,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/home/user/Downloads/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_notifications_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/user/Downloads/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/toggle/ic_star_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -149,7 +149,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_notifications" />
+                            <entry key="outputName" value="ic_star" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="$APPLICATION_HOME_DIR$/bin/C:\Program Files\Android\Android Studio\bin\C:\Users\fedorovs" />
                           </map>

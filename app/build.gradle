@@ -32,6 +32,8 @@ dependencies {
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:8.0.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.10.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:0.3.0'
+    implementation 'com.txusballesteros:FitChart:1.0'
+    implementation 'com.github.bmarrdev:android-DecoView-charting:v0.9.3'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'

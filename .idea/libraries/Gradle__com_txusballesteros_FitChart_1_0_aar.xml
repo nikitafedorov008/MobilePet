@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.txusballesteros:FitChart:1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/FitChart-1.0.aar/c6a1c1bd23387bc1fa67db70dd7538be/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/FitChart-1.0.aar/c6a1c1bd23387bc1fa67db70dd7538be/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.txusballesteros/FitChart/1.0/acec98d60cb15ad83f294b333d71cb61d93806c6/FitChart-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
