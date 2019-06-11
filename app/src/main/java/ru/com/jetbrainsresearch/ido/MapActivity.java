@@ -1,7 +1,11 @@
 package ru.com.jetbrainsresearch.ido;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -10,6 +14,7 @@ import com.mapbox.mapboxsdk.maps.Style;
 
 public class MapActivity extends AppCompatActivity {
     private MapView mapView;
+    private FloatingActionButton mapCloseBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,14 @@ public class MapActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+        mapCloseBtn = (FloatingActionButton) findViewById(R.id.map_close_btn);
+        mapCloseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapActivity.this, MainActivity.class);
+                finish();
             }
         });
     }
