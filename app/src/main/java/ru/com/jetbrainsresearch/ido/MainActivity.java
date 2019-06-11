@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
-    }
+    }*/
 
     @Override
     protected void onPause() {

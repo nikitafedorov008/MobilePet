@@ -60,6 +60,20 @@ public class StatisticsFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
 
+        final FitChart fitChart = (FitChart)getActivity().findViewById(R.id.fitChart);
+        fitChart.setMinValue(0f);
+        fitChart.setMaxValue(100f);
 
+        Resources resources = getResources();
+        Collection<FitChartValue> values = new ArrayList<>();
+        values.add(new FitChartValue(30f, resources.getColor(R.color.chart_value_1)));
+        values.add(new FitChartValue(20f, resources.getColor(R.color.chart_value_2)));
+        values.add(new FitChartValue(15f, resources.getColor(R.color.chart_value_3)));
+        values.add(new FitChartValue(10f, resources.getColor(R.color.chart_value_4)));
+        fitChart.setValues(values);
+    }
 }

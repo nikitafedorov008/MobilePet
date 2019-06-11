@@ -17,7 +17,7 @@
             <ImageView
                 android:id="@+id/header_cover_image"
                 android:layout_width="match_parent"
-                android:layout_height="115dp"
+                android:layout_height="74dp"
                 android:scaleType="centerCrop"
                 android:src="@color/colorPrimaryDark" />
 
@@ -37,36 +37,25 @@
             <RelativeLayout
                 android:id="@+id/profile_layout"
                 android:layout_width="match_parent"
-                android:layout_height="124dp"
+                android:layout_height="144dp"
                 android:layout_below="@+id/header_cover_image"
+                android:layout_marginTop="-5dp"
                 android:backgroundTint="@android:color/white"
                 android:elevation="4dp"
                 android:paddingBottom="24dp">
 
-                <TextView
-                    android:id="@+id/company_name"
+                <EditText
+                    android:id="@+id/edit_pet_name"
+                    android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="76dp"
-                    android:text="IDO"
+                    android:hint="IDO"
                     android:textColor="@android:color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/company_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/company_name"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:text="pet"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp" />
             </RelativeLayout>
 
 
