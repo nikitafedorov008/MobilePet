@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.google.zxing.integration.android.IntentResult;
 
 import es.dmoral.toasty.Toasty;
 
+import static android.support.constraint.Constraints.TAG;
 import static ru.com.jetbrainsresearch.ido.model.Pet.APP_PREFERENCES;
 import static ru.com.jetbrainsresearch.ido.model.Pet.APP_PREFERENCES_COUNTER1;
 import static ru.com.jetbrainsresearch.ido.model.Pet.APP_PREFERENCES_COUNTER2;
@@ -36,7 +38,7 @@ public class PetFragment extends Fragment {
 
 
     private SharedPreferences mSettings;
-
+    public static IntentResult result;
     public TextView countTv, countTv2, countTv3, countTv4;
     public static TextView petName;
     public FloatingActionButton feedFb;
@@ -118,11 +120,25 @@ public class PetFragment extends Fragment {
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         String barcode = result.getContents();
         if (barcode != null){
             countTv3.setText(String.valueOf(count3 += 50));
-            Toasty.success(getActivity(), "good",   Toast.LENGTH_SHORT).show();
+            Toasty.success(getActivity(), String.valueOf(result).replace("Format:QR_CODE Contents: " + "RAW bytes:\\(64 bytes\\)EC level:MBarcode image: null", ""), Toast.LENGTH_LONG).show();{
+                new ru.com.jetbrainsresearch.ido.api.restApiQrCheck()
+                        .restApiQrCodeCheck(String.valueOf(result)) { result ->
+
+                }
+            }
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run(){
+                    new ru.com.jetbrainsresearch.ido.api.restApiQrCheck().restApiQrCodeCheck(String.valueOf(result));
+
+                }
+            });
+
+            thread.start();
         } else {
             Toasty.error(getActivity(), "you didn't feed me",   Toast.LENGTH_SHORT).show();
         }
