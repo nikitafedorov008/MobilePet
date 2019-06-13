@@ -1,6 +1,7 @@
 package ru.com.jetbrainsresearch.ido;
 
-
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -122,7 +123,10 @@ public class PetFragment extends Fragment {
         String barcode = result.getContents();
         if (barcode != null){
             countTv3.setText(String.valueOf(count3 += 50));
-            Toasty.success(getActivity(), "good",   Toast.LENGTH_SHORT).show();
+
+            String s = String.valueOf(result);
+             String  resultStr = s.substring(s.indexOf("t="), s.indexOf("n=1")+3);
+            Toasty.success(getActivity(),  resultStr,   Toast.LENGTH_SHORT).show();
         } else {
             Toasty.error(getActivity(), "you didn't feed me",   Toast.LENGTH_SHORT).show();
         }
@@ -135,13 +139,13 @@ public class PetFragment extends Fragment {
         countTv3.setText(String.valueOf(count3 -= 5));
         countTv4.setText(String.valueOf(count4 += 2));
 
-        if (count1 == 0){
+        if (count1 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
-        }else if (count2 == 0){
+        }else if (count2 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
-        }else if (count3 == 0){
+        }else if (count3 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
-        }else if (count4 == 0){
+        }else if (count4 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
         }
         //pause
@@ -153,13 +157,13 @@ public class PetFragment extends Fragment {
         countTv3.setText(String.valueOf(count3 -= 5));
         countTv4.setText(String.valueOf(count4 += 2));
 
-        if (count1 == 0){
+        if (count1 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
-        }else if (count2 == 0){
+        }else if (count2 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
-        }else if (count3 == 0){
+        }else if (count3 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
-        }else if (count4 == 0){
+        }else if (count4 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
         }
         //pause
