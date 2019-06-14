@@ -163,18 +163,25 @@ public class PetFragment extends Fragment {
         if (count1 <= 0){
             countTv.setText(String.valueOf(count1 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
-        }else if (count2 <= 0){
+        }
+        if (count2 <= 0){
             countTv2.setText(String.valueOf(count2 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
-        }else if (count3 <= 0){
+        }
+        if (count3 <= 0){
             countTv3.setText(String.valueOf(count3 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
-        }else if (count4 <= 0){
+        }
+        if (count4 <= 0){
             countTv4.setText(String.valueOf(count4 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
         }
         //pause
@@ -206,18 +213,25 @@ public class PetFragment extends Fragment {
         if (count1 <= 0){
             countTv.setText(String.valueOf(count1 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
-        }else if (count2 <= 0){
+        }
+        if (count2 <= 0){
             countTv2.setText(String.valueOf(count2 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
-        }else if (count3 <= 0){
+        }
+        if (count3 <= 0){
             countTv3.setText(String.valueOf(count3 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
-        }else if (count4 <= 0){
+        }
+        if (count4 <= 0){
             countTv4.setText(String.valueOf(count4 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
             Dialog();
         }
         //pause
@@ -257,18 +271,25 @@ public class PetFragment extends Fragment {
             countTv.setText(String.valueOf(count1 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
             Dialog();
-        }else if (count2 <= 0){
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
+        }
+        if (count2 <= 0){
             countTv2.setText(String.valueOf(count2 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
             Dialog();
-        }else if (count3 <= 0){
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
+        }
+        if (count3 <= 0){
             countTv3.setText(String.valueOf(count3 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
             Dialog();
-        }else if (count4 <= 0){
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
+        }
+        if (count4 <= 0){
             countTv4.setText(String.valueOf(count4 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
             Dialog();
+            Toasty.error(getActivity(), "You killed me, boss!", Toast.LENGTH_SHORT).show();
         }
     }
 

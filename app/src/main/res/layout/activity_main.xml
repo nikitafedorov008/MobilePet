@@ -66,16 +66,6 @@
             app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/home_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/colorPrimary"
-            app:fab_colorPressed="@color/colorPrimaryDark"
-            android:src="@drawable/ic_home"
-            app:fab_label="@string/title_home"
-            app:fab_size="mini" />
-
-        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/cart_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

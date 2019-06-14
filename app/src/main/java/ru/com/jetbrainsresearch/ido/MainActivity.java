@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer player;
 
-    private FloatingActionButton petFB, homeFB, mapFB, statisticsFB, settingsFB, cartFB;
+    private FloatingActionButton petFB, mapFB, statisticsFB, settingsFB, cartFB;
     final Fragment fragment1 = new PetFragment();
     final Fragment fragment2 = new HomeFragment();
     final Fragment fragment3 = new StatisticsFragment();
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         petFB = (FloatingActionButton) findViewById(R.id.pet_fab);
-        homeFB = (FloatingActionButton) findViewById(R.id.home_fab);
         mapFB = (FloatingActionButton) findViewById(R.id.map_fab);
         statisticsFB = (FloatingActionButton) findViewById(R.id.statistic_fab);
         settingsFB = (FloatingActionButton) findViewById(R.id.settings_fab);
@@ -53,14 +52,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 fm.beginTransaction().hide(active).show(fragment1).commit();
                 active = fragment1;
-            }
-        });
-
-        homeFB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fm.beginTransaction().hide(active).show(fragment2).commit();
-                active = fragment2;
             }
         });
 
