@@ -17,11 +17,12 @@ import ru.com.jetbrainsresearch.ido.home.HomeFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    private FloatingActionButton petFB, homeFB, mapFB, statisticsFB, settingsFB;
+    private FloatingActionButton petFB, homeFB, mapFB, statisticsFB, settingsFB, cartFB;
     final Fragment fragment1 = new PetFragment();
     final Fragment fragment2 = new HomeFragment();
     final Fragment fragment3 = new StatisticsFragment();
     final Fragment fragment4 = new SettingsFragment();
+    final Fragment fragment5 = new CartFragment();
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragment1;
 
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         mapFB = (FloatingActionButton) findViewById(R.id.map_fab);
         statisticsFB = (FloatingActionButton) findViewById(R.id.statistic_fab);
         settingsFB = (FloatingActionButton) findViewById(R.id.settings_fab);
+        cartFB = (FloatingActionButton) findViewById(R.id.cart_fab);
+        fm.beginTransaction().add(R.id.main_container, fragment5, "5").hide(fragment5).commit();
         fm.beginTransaction().add(R.id.main_container, fragment4, "4").hide(fragment4).commit();
         fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
@@ -80,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 fm.beginTransaction().hide(active).show(fragment4).commit();
                 active = fragment4;
+            }
+        });
+
+        cartFB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fm.beginTransaction().hide(active).show(fragment5).commit();
+                active = fragment5;
             }
         });
 

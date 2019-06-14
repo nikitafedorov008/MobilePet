@@ -1,5 +1,7 @@
 package ru.com.jetbrainsresearch.ido;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -22,6 +24,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import es.dmoral.toasty.Toasty;
+import ru.com.jetbrainsresearch.ido.api.OFDapi;
 
 import static ru.com.jetbrainsresearch.ido.model.Pet.APP_PREFERENCES;
 import static ru.com.jetbrainsresearch.ido.model.Pet.APP_PREFERENCES_COUNTER1;
@@ -38,6 +41,7 @@ public class PetFragment extends Fragment {
 
     private SharedPreferences mSettings;
 
+    public static String s;
     public TextView countTv, countTv2, countTv3, countTv4;
     public static TextView petName;
     public FloatingActionButton feedFb;
@@ -78,6 +82,29 @@ public class PetFragment extends Fragment {
                     integrator.setOrientationLocked(false);
                     //integrator.initiateScan();
                     IntentIntegrator.forSupportFragment(PetFragment.this).initiateScan();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(PetFragment.this.getActivity().getApplicationContext());
+                builder.setTitle("GRRRRRR")
+                        .setMessage("Nox i'm zombie, because u didn't care about me")
+                        .setIcon(R.drawable.zombiecat)
+                        .setCancelable(false)
+                        .setNegativeButton("OK, i'm sorry",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                AlertDialog alert = builder.create();
+                if (count1 == 0){
+                    alert.show();
+                }else if (count2 == 0){
+                    alert.show();
+                }else if (count3 == 0){
+                    alert.show();
+                }else if (count4 == 0){
+                    alert.show();
+                }
+
             }
         });
 
@@ -123,10 +150,19 @@ public class PetFragment extends Fragment {
         String barcode = result.getContents();
         if (barcode != null){
             countTv3.setText(String.valueOf(count3 += 50));
-
-            String s = String.valueOf(result);
-             String  resultStr = s.substring(s.indexOf("t="), s.indexOf("n=1")+3);
+            feedCount();
+            s = String.valueOf(result);
+            String  resultStr = s.substring(s.indexOf("t="), s.indexOf("n=1")+3);
             Toasty.success(getActivity(),  resultStr,   Toast.LENGTH_SHORT).show();
+            //new OFDapi().restApiQrCodeCheck(s)->s
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run(){
+                    new ru.com.jetbrainsresearch.ido.api.OFDapi().restApiQrCodeCheck(s);
+
+                }
+            });
+            thread.start();
         } else {
             Toasty.error(getActivity(), "you didn't feed me",   Toast.LENGTH_SHORT).show();
         }
@@ -152,10 +188,10 @@ public class PetFragment extends Fragment {
     }
 
     private void feedCount() {
-        countTv.setText(String.valueOf(count1 +=20));
-        countTv2.setText(String.valueOf(count2 -= 2));
-        countTv3.setText(String.valueOf(count3 -= 5));
-        countTv4.setText(String.valueOf(count4 += 2));
+        countTv.setText(String.valueOf(count1 -=20));
+        countTv2.setText(String.valueOf(count2 += 2));
+        countTv3.setText(String.valueOf(count3 += 5));
+        countTv4.setText(String.valueOf(count4 -= 2));
 
         if (count1 <= 0){
             countBtn.setImageResource(R.drawable.zombiecat);
