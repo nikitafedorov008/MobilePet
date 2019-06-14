@@ -1,6 +1,7 @@
 package ru.com.jetbrainsresearch.ido;
 
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,9 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import es.dmoral.toasty.Toasty;
 import ru.com.jetbrainsresearch.ido.api.OFDapi;
@@ -83,27 +87,7 @@ public class PetFragment extends Fragment {
                     //integrator.initiateScan();
                     IntentIntegrator.forSupportFragment(PetFragment.this).initiateScan();
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(PetFragment.this.getActivity().getApplicationContext());
-                builder.setTitle("GRRRRRR")
-                        .setMessage("Nox i'm zombie, because u didn't care about me")
-                        .setIcon(R.drawable.zombiecat)
-                        .setCancelable(false)
-                        .setNegativeButton("OK, i'm sorry",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                });
-                AlertDialog alert = builder.create();
-                if (count1 == 0){
-                    alert.show();
-                }else if (count2 == 0){
-                    alert.show();
-                }else if (count3 == 0){
-                    alert.show();
-                }else if (count4 == 0){
-                    alert.show();
-                }
+
 
             }
         });
@@ -170,39 +154,122 @@ public class PetFragment extends Fragment {
 
     private void increaseCount() {
         int current = Integer.parseInt((String) countTv.getText());
-        countTv.setText(String.valueOf(count1 +=20));
-        countTv2.setText(String.valueOf(count2 -= 2));
-        countTv3.setText(String.valueOf(count3 -= 5));
-        countTv4.setText(String.valueOf(count4 += 2));
+        countTv.setText(String.valueOf(count1 -=2));
+        countTv2.setText(String.valueOf(count2 += 6));
+        countTv3.setText(String.valueOf(count3 += 2));
+        countTv4.setText(String.valueOf(count4 -= 1));
+
 
         if (count1 <= 0){
+            countTv.setText(String.valueOf(count1 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }else if (count2 <= 0){
+            countTv2.setText(String.valueOf(count2 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }else if (count3 <= 0){
+            countTv3.setText(String.valueOf(count3 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }else if (count4 <= 0){
+            countTv4.setText(String.valueOf(count4 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }
         //pause
     }
 
+    private void Dialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(PetFragment.this.getActivity().getApplicationContext());
+        builder.setTitle("GRRRRRR")
+                .setMessage("Now i'm zombie, because u didn't care about me")
+                .setIcon(R.drawable.zombiecat)
+                .setCancelable(false)
+                .setNegativeButton("OK, i'm sorry",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+
+    }
+
     private void feedCount() {
-        countTv.setText(String.valueOf(count1 -=20));
+        countTv.setText(String.valueOf(count1 +=20));
         countTv2.setText(String.valueOf(count2 += 2));
-        countTv3.setText(String.valueOf(count3 += 5));
-        countTv4.setText(String.valueOf(count4 -= 2));
+        countTv3.setText(String.valueOf(count3 += 10));
+        countTv4.setText(String.valueOf(count4 += 10));
 
         if (count1 <= 0){
+            countTv.setText(String.valueOf(count1 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }else if (count2 <= 0){
+            countTv2.setText(String.valueOf(count2 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }else if (count3 <= 0){
+            countTv3.setText(String.valueOf(count3 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }else if (count4 <= 0){
+            countTv4.setText(String.valueOf(count4 = 0));
             countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
         }
         //pause
+    }
+
+    private Timer timer;
+    private TimerTask timerTask;
+    private Handler handler = new Handler();
+
+    //To stop timer
+    private void stopTimer(){
+        if(timer != null){
+            timer.cancel();
+            timer.purge();
+        }
+    }
+
+    //To start timer
+    private void startTimer(){
+        timer = new Timer();
+        timerTask = new TimerTask() {
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run(){
+//your code is here
+                    }
+                });
+            }
+        };
+        timer.schedule(timerTask, 6000, 6000);
+        countTv.setText(String.valueOf(count1 -=2));
+        countTv2.setText(String.valueOf(count2 -= 3));
+        countTv3.setText(String.valueOf(count3 -= 4));
+        countTv4.setText(String.valueOf(count4 -= 1));
+
+        if (count1 <= 0){
+            countTv.setText(String.valueOf(count1 = 0));
+            countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
+        }else if (count2 <= 0){
+            countTv2.setText(String.valueOf(count2 = 0));
+            countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
+        }else if (count3 <= 0){
+            countTv3.setText(String.valueOf(count3 = 0));
+            countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
+        }else if (count4 <= 0){
+            countTv4.setText(String.valueOf(count4 = 0));
+            countBtn.setImageResource(R.drawable.zombiecat);
+            Dialog();
+        }
     }
 
 }
