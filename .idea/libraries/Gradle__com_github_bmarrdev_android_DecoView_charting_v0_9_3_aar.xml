@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.bmarrdev:android-DecoView-charting:v0.9.3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c48c744b0a0ead8e4bb2b7404b7c930/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1c48c744b0a0ead8e4bb2b7404b7c930/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7dc2e63125f65b8736d4f1422c3a880c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7dc2e63125f65b8736d4f1422c3a880c/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

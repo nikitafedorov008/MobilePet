@@ -1,6 +1,7 @@
 package ru.com.jetbrainsresearch.ido;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,7 @@ import ru.com.jetbrainsresearch.ido.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MediaPlayer player;
 
     private FloatingActionButton petFB, homeFB, mapFB, statisticsFB, settingsFB, cartFB;
     final Fragment fragment1 = new PetFragment();
@@ -93,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 active = fragment5;
             }
         });
+
+
+        player = MediaPlayer.create(this, R.raw.what_is_love);
+        player.setLooping(true);
+        player.setVolume(0.5f, 0.5f);
+        player.start();
 
     }
 
