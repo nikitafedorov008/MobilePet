@@ -17,7 +17,7 @@ import ru.com.jetbrainsresearch.ido.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MediaPlayer player;
+    public static MediaPlayer player;
 
     private FloatingActionButton petFB, homeFB, mapFB, statisticsFB, settingsFB, cartFB;
     final Fragment fragment1 = new PetFragment();
