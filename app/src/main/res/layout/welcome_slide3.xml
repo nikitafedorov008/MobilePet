@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="222dp"
             android:layout_height="222dp"
-            android:src="@drawable/cat" />
+            android:src="@drawable/confetti" />
 
         <TextView
             android:layout_width="wrap_content"
